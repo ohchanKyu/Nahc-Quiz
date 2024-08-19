@@ -36,6 +36,7 @@
 
 - [x] MyBatis
 - [x] Thymeleaf
+- [x] Gradle
 
 <br>
 

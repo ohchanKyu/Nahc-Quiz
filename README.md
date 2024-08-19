@@ -134,142 +134,126 @@
 ### 아키텍쳐
 #### 디렉터리 구조
 ```
-📦koskQuizProgram
- ┣ 📂.gradle
- ┣ 📂out
- ┃ ┣ 📂production
- ┃ ┃ ┣ 📂classes
- ┃ ┃ ┃ ┣ 📂com
- ┃ ┃ ┃ ┃ ┗ 📂example
- ┃ ┃ ┃ ┃ ┃ ┗ 📂koskQuizProgram
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂api
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜ApiMemberController.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂board
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜BoardController.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜BoardRestController.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂config
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜InterceptorConfig.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜LoginInterceptor.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜WebConfig.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂controller
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ApiController$1.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ApiController$10.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ApiController$11.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ApiController$12.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ApiController$2.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ApiController$3.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ApiController$4.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ApiController$5.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ApiController$6.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ApiController$7.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ApiController$8.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ApiController$9.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜ApiController.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂exception
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜BadRequestException.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜InsertFailException.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ResourceAlreadyInUseException.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜UserNotFoundException.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂mail
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MailController.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂mainPage
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MainpageController.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂mapper
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜BoardMapper.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜CommentMapper.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberMapper.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂member
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberController.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂model
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ApiVO.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜BoardVO.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜CommentVO.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MailVO.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberVO.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜Message.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂payload
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂response
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜ApiResponse.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂service
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜BoardService.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜CommentService.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberService.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂serviceImpl
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜BoardServiceImpl.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜CommentServiceImpl.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MailServiceImpl.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberServiceImpl.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂Util
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ExceptionMessage.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜Util.class
- ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜KoskQuizProgramApplication.class
- ┃ ┃ ┃ ┗ 📂generated
- ┃ ┃ ┗ 📂resources
- ┃ ┃ ┃ ┣ 📂mappers
- ┃ ┃ ┃ ┃ ┣ 📜boardMapper.xml
- ┃ ┃ ┃ ┃ ┣ 📜commentMapper.xml
- ┃ ┃ ┃ ┃ ┗ 📜memberMapper.xml
- ┃ ┃ ┃ ┣ 📂schema
- ┃ ┃ ┃ ┃ ┗ 📜DML.sql
- ┃ ┃ ┃ ┣ 📂static
- ┃ ┃ ┃ ┃ ┣ 📂css
- ┃ ┃ ┃ ┃ ┃ ┣ 📜editId.css
- ┃ ┃ ┃ ┃ ┃ ┣ 📜editPass.css
- ┃ ┃ ┃ ┃ ┃ ┣ 📜editPerson.css
- ┃ ┃ ┃ ┃ ┃ ┣ 📜find_id.css
- ┃ ┃ ┃ ┃ ┃ ┣ 📜find_pw.css
- ┃ ┃ ┃ ┃ ┃ ┣ 📜join.css
- ┃ ┃ ┃ ┃ ┃ ┣ 📜list.css
- ┃ ┃ ┃ ┃ ┃ ┣ 📜login.css
- ┃ ┃ ┃ ┃ ┃ ┣ 📜loginRequired.css
- ┃ ┃ ┃ ┃ ┃ ┣ 📜main.css
- ┃ ┃ ┃ ┃ ┃ ┣ 📜myPost.css
- ┃ ┃ ┃ ┃ ┃ ┣ 📜quizMenu.css
- ┃ ┃ ┃ ┃ ┃ ┣ 📜quizTemplate.css
- ┃ ┃ ┃ ┃ ┃ ┣ 📜rankList.css
- ┃ ┃ ┃ ┃ ┃ ┣ 📜resultPage.css
- ┃ ┃ ┃ ┃ ┃ ┣ 📜UserPage.css
- ┃ ┃ ┃ ┃ ┃ ┣ 📜view.css
- ┃ ┃ ┃ ┃ ┃ ┗ 📜write.css
- ┃ ┃ ┃ ┃ ┣ 📂font
- ┃ ┃ ┃ ┃ ┃ ┗ 📜Naver-Icons.woff
- ┃ ┃ ┃ ┃ ┣ 📂images
- ┃ ┃ ┃ ┃ ┃ ┣ 📜leaderboard.png
-                ...
- ┃ ┃ ┃ ┃ ┃ ┗ 📜user.png
- ┃ ┃ ┃ ┃ ┗ 📂uploadImage
- ┃ ┃ ┃ ┃ ┃ ┣ 📜063aacd3-d05c-4290-addc-3baa4cb3c526.png
-                  ...
- ┃ ┃ ┃ ┃ ┃ ┗ 📜fc68ae7e-00e5-46a2-8350-ba67772613d4.png
- ┃ ┃ ┃ ┣ 📂templates
- ┃ ┃ ┃ ┃ ┣ 📂board
- ┃ ┃ ┃ ┃ ┃ ┣ 📜list.html
- ┃ ┃ ┃ ┃ ┃ ┣ 📜myPost.html
- ┃ ┃ ┃ ┃ ┃ ┣ 📜rankList.html
- ┃ ┃ ┃ ┃ ┃ ┣ 📜view.html
- ┃ ┃ ┃ ┃ ┃ ┗ 📜write.html
- ┃ ┃ ┃ ┃ ┣ 📂main
- ┃ ┃ ┃ ┃ ┃ ┣ 📜loginRequired.html
- ┃ ┃ ┃ ┃ ┃ ┗ 📜main.html
- ┃ ┃ ┃ ┃ ┣ 📂member
- ┃ ┃ ┃ ┃ ┃ ┣ 📜find_id.html
- ┃ ┃ ┃ ┃ ┃ ┣ 📜find_pw.html
- ┃ ┃ ┃ ┃ ┃ ┣ 📜join.html
- ┃ ┃ ┃ ┃ ┃ ┗ 📜login.html
- ┃ ┃ ┃ ┃ ┣ 📂message
- ┃ ┃ ┃ ┃ ┃ ┗ 📜message.html
- ┃ ┃ ┃ ┃ ┣ 📂quiz
- ┃ ┃ ┃ ┃ ┃ ┣ 📜quizMenu.html
- ┃ ┃ ┃ ┃ ┃ ┣ 📜quizTemplate.html
- ┃ ┃ ┃ ┃ ┃ ┗ 📜resultPage.html
- ┃ ┃ ┃ ┃ ┗ 📂user
- ┃ ┃ ┃ ┃ ┃ ┣ 📜editId.html
- ┃ ┃ ┃ ┃ ┃ ┣ 📜editPass.html
- ┃ ┃ ┃ ┃ ┃ ┣ 📜editPerson.html
- ┃ ┃ ┃ ┃ ┃ ┗ 📜userPage.html
- ┃ ┃ ┃ ┣ 📜application.properties
- ┃ ┃ ┃ ┣ 📜log4jdbc.log4j2.properties
- ┃ ┃ ┃ ┗ 📜logback-spring.xml
- ┣ 📜build.gradle
- ┗ 📜settings.gradle
+📦java
+ ┗ 📂com
+ ┃ ┗ 📂example
+ ┃ ┃ ┗ 📂koskQuizProgram
+ ┃ ┃ ┃ ┣ 📂api
+ ┃ ┃ ┃ ┃ ┗ 📜ApiMemberController.java
+ ┃ ┃ ┃ ┣ 📂board
+ ┃ ┃ ┃ ┃ ┣ 📜BoardController.java
+ ┃ ┃ ┃ ┃ ┗ 📜BoardRestController.java
+ ┃ ┃ ┃ ┣ 📂config
+ ┃ ┃ ┃ ┃ ┣ 📜InterceptorConfig.java
+ ┃ ┃ ┃ ┃ ┣ 📜LoginInterceptor.java
+ ┃ ┃ ┃ ┃ ┗ 📜WebConfig.java
+ ┃ ┃ ┃ ┣ 📂controller
+ ┃ ┃ ┃ ┃ ┗ 📜ApiController.java
+ ┃ ┃ ┃ ┣ 📂exception
+ ┃ ┃ ┃ ┃ ┣ 📜BadRequestException.java
+ ┃ ┃ ┃ ┃ ┣ 📜InsertFailException.java
+ ┃ ┃ ┃ ┃ ┣ 📜ResourceAlreadyInUseException.java
+ ┃ ┃ ┃ ┃ ┗ 📜UserNotFoundException.java
+ ┃ ┃ ┃ ┣ 📂mail
+ ┃ ┃ ┃ ┃ ┗ 📜MailController.java
+ ┃ ┃ ┃ ┣ 📂mainPage
+ ┃ ┃ ┃ ┃ ┗ 📜MainpageController.java
+ ┃ ┃ ┃ ┣ 📂mapper
+ ┃ ┃ ┃ ┃ ┣ 📜BoardMapper.java
+ ┃ ┃ ┃ ┃ ┣ 📜CommentMapper.java
+ ┃ ┃ ┃ ┃ ┗ 📜MemberMapper.java
+ ┃ ┃ ┃ ┣ 📂member
+ ┃ ┃ ┃ ┃ ┗ 📜MemberController.java
+ ┃ ┃ ┃ ┣ 📂model
+ ┃ ┃ ┃ ┃ ┣ 📜ApiVO.java
+ ┃ ┃ ┃ ┃ ┣ 📜BoardVO.java
+ ┃ ┃ ┃ ┃ ┣ 📜CommentVO.java
+ ┃ ┃ ┃ ┃ ┣ 📜MailVO.java
+ ┃ ┃ ┃ ┃ ┣ 📜MemberVO.java
+ ┃ ┃ ┃ ┃ ┗ 📜Message.java
+ ┃ ┃ ┃ ┣ 📂payload
+ ┃ ┃ ┃ ┃ ┣ 📂request
+ ┃ ┃ ┃ ┃ ┗ 📂response
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜ApiResponse.java
+ ┃ ┃ ┃ ┣ 📂service
+ ┃ ┃ ┃ ┃ ┣ 📜BoardService.java
+ ┃ ┃ ┃ ┃ ┣ 📜CommentService.java
+ ┃ ┃ ┃ ┃ ┗ 📜MemberService.java
+ ┃ ┃ ┃ ┣ 📂serviceImpl
+ ┃ ┃ ┃ ┃ ┣ 📜BoardServiceImpl.java
+ ┃ ┃ ┃ ┃ ┣ 📜CommentServiceImpl.java
+ ┃ ┃ ┃ ┃ ┣ 📜MailServiceImpl.java
+ ┃ ┃ ┃ ┃ ┗ 📜MemberServiceImpl.java
+ ┃ ┃ ┃ ┣ 📂Util
+ ┃ ┃ ┃ ┃ ┣ 📜ExceptionMessage.java
+ ┃ ┃ ┃ ┃ ┗ 📜Util.java
+ ┃ ┃ ┃ ┗ 📜KoskQuizProgramApplication.java
+📦resources
+ ┣ 📂mappers
+ ┃ ┣ 📜boardMapper.xml
+ ┃ ┣ 📜commentMapper.xml
+ ┃ ┗ 📜memberMapper.xml
+ ┣ 📂schema
+ ┃ ┗ 📜DML.sql
+ ┣ 📂static
+ ┃ ┣ 📂css
+ ┃ ┃ ┣ 📜editId.css
+ ┃ ┃ ┣ 📜editPass.css
+ ┃ ┃ ┣ 📜editPerson.css
+ ┃ ┃ ┣ 📜find_id.css
+ ┃ ┃ ┣ 📜find_pw.css
+ ┃ ┃ ┣ 📜join.css
+ ┃ ┃ ┣ 📜list.css
+ ┃ ┃ ┣ 📜login.css
+ ┃ ┃ ┣ 📜loginRequired.css
+ ┃ ┃ ┣ 📜main.css
+ ┃ ┃ ┣ 📜myPost.css
+ ┃ ┃ ┣ 📜quizMenu.css
+ ┃ ┃ ┣ 📜quizTemplate.css
+ ┃ ┃ ┣ 📜rankList.css
+ ┃ ┃ ┣ 📜resultPage.css
+ ┃ ┃ ┣ 📜UserPage.css
+ ┃ ┃ ┣ 📜view.css
+ ┃ ┃ ┗ 📜write.css
+ ┃ ┣ 📂font
+ ┃ ┃ ┗ 📜Naver-Icons.woff
+ ┃ ┣ 📂images
+ ┃ ┃ ┣ 📜leaderboard.png
+ ┃ ┃ ┣ 📜note.png
+ ┃ ┃ ┣ 📜quiz.png
+ ┃ ┃ ┣ 📜score.png
+ ┃ ┃ ┣ 📜spr_book.png
+ ┃ ┃ ┗ 📜user.png
+ ┃ ┗ 📂uploadImage
+ ┃ ┃ ┣ 📜063aacd3-d05c-4290-addc-3baa4cb3c526.png
+            ...
+ ┃ ┃ ┗ 📜fc68ae7e-00e5-46a2-8350-ba67772613d4.png
+ ┣ 📂templates
+ ┃ ┣ 📂board
+ ┃ ┃ ┣ 📜list.html
+ ┃ ┃ ┣ 📜myPost.html
+ ┃ ┃ ┣ 📜rankList.html
+ ┃ ┃ ┣ 📜view.html
+ ┃ ┃ ┗ 📜write.html
+ ┃ ┣ 📂main
+ ┃ ┃ ┣ 📜loginRequired.html
+ ┃ ┃ ┗ 📜main.html
+ ┃ ┣ 📂member
+ ┃ ┃ ┣ 📜find_id.html
+ ┃ ┃ ┣ 📜find_pw.html
+ ┃ ┃ ┣ 📜join.html
+ ┃ ┃ ┗ 📜login.html
+ ┃ ┣ 📂message
+ ┃ ┃ ┗ 📜message.html
+ ┃ ┣ 📂quiz
+ ┃ ┃ ┣ 📜quizMenu.html
+ ┃ ┃ ┣ 📜quizTemplate.html
+ ┃ ┃ ┗ 📜resultPage.html
+ ┃ ┗ 📂user
+ ┃ ┃ ┣ 📜editId.html
+ ┃ ┃ ┣ 📜editPass.html
+ ┃ ┃ ┣ 📜editPerson.html
+ ┃ ┃ ┗ 📜userPage.html
+ ┣ 📜log4jdbc.log4j2.properties
+ ┗ 📜logback-spring.xml
 ```

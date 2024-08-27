@@ -3,7 +3,7 @@
     랜덤 퀴즈 프로그램
 </h3>
 <p align="center">
-  2022년 한신대학교 소프트웨어 공모전 우수상 작품
+  2023년 한신대학교 소프트웨어 공모전 우수상 작품
 </p>
 
 <br>
@@ -11,7 +11,7 @@
 <blockquote>
   <p dir="auto">
      <strong> 2022년 한신대학교 소프트웨어 공모전 우수상 작품 </strong> <br>
-     <strong> 개발 기간 : 2023.06.20 ~ 2024.07.29 </strong> <br>
+     <strong> 개발 기간 : 2023.06.20 ~ 2023.07.29 </strong> <br>
      <strong> 단국대학교 컴퓨터공학과 오규찬 / okc0202@naver.com </strong> <br>
      <strong> 한신대학교 컴퓨터공학과 김승룡 / douglas@naver.com </strong>
   </p>
